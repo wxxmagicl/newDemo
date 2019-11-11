@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--//用于移动端的html页面再书写的时候需要加上视口-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*点击取消，去除input框内部的文字。input框内部输入的时候（oninput）显示下拉提示，*/
+        /*利用缓存显示历史搜索，点击历史搜索完成第二次搜索*/
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items:baseline;
+        }
+        .search {
+            width: 300px;
+            height: 35px;
+            border-radius: 10px;
+            border: 2px solid #409ef0;
+            color: #888;
+        }
+        .cancle {
+            text-decoration: none;
+            color:#409ef0;
+            /*为什么移动的元素的时候使用transform：translate而不是定位*/
+            transform:translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" value="请输入你想查找的关键字" class="search">
+        <!--input设置默认字的两种方式 使用value在提交的时候可以直接获取，-->
+        <!--placeholder在提交的时候不能直接获取-->
+        <a href="" class="cancle">取消</a>
+    </div>
+</body>
+<script>
+    var search = document.querySelector(".search");
+    console.log(search);
+    search.onfocus = function () {
+        // console.log(111);
+        this.select()
+    };
+    // oninput事件和onchange事件的区别
+    // 前者表单元素改变就会触发，后者表单元素改变并且失去焦点的时候才会触发
+    search.oninput = function () {
+        
+    }
+</script>
+</html>

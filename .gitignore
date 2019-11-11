@@ -1,0 +1,7 @@
+#在这里直接写不需要追踪的文件夹或者文件的名称就可以
+
+.idea
+node_modules
+
+
+#这是一条注释node_modules
